@@ -23,8 +23,7 @@ set -o nounset                                  # Treat unset variables as an er
 system=$1
 emulator=$2
 
-hdmi_timings=
-case system in 
+case $system in 
     atarijaguar)
         ;;
     nes)
@@ -62,6 +61,7 @@ case system in
     atari5200)
         ;;
     snes)
+#        vcgencmd hdmi_timings 320 1 15 29 40 224 1 10 14 16 0 0 0 60 0 6400000 1 # why is this working?!
         ;;
     arcade)
         ;;
@@ -99,3 +99,4 @@ case system in
         ;;
 esac        
 
+echo "testmessage\n" > &2
